@@ -2,8 +2,8 @@
 af Rasmus H. og Mikkel L
 
 # Table of content
-- [Install lxc-net](##Install%20lxc-net)
-- [Create containers](##Create%20containers)
+- [Install lxc-net](##Install%lxc-net)
+- [Create containers](##Create%containers)
 
 <!-- toc -->
 
@@ -41,6 +41,8 @@ $ echo "lxc.network.type = veth" >> ~/.config/lxc/default.conf
 $ echo "lxc.network.link = lxcbr0" >> ~/.config/lxc/default.conf
 $ echo "$USER veth lxcbr0 2" | sudo tee -a /etc/lxc/lxc-usernet
 ```
+### For each container
+
 Create to containers like the following but with diffrent names, ex. M1 and M2  
 
 ```sh
