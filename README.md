@@ -69,8 +69,47 @@ Start the lighttpd service, inside the container:
 Then do this again for container M2.
 
 ## Hosting container
+Create *" /var/www/localhost/htdocs/index.php "* and add (Credit Thora)
+```sh<!DOCTYPE html>
+<html><body><pre>
+<?php 
+        // create curl resource 
+        $ch = curl_init(); 
+        
+        // set url 
+        curl_setopt($ch, CURLOPT_URL, "M2:8080"); 
+        
+        //return the transfer as a string 
+        curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1); 
+        
+        // $output contains the output string 
+        $output = curl_exec($ch); 
+        
+        // close curl resource to free up system resources
+        curl_close($ch);
+        print $output;
+?>
+</pre></body></html>
+```
 
 ## Random number container
+Inside the random container M2:
+```sh
+# apk add socat
+```
+Inside bin create *"/bin/rng.sh"* and write   
+```sh
+#!/bin/ash
+
+dd if=/dev/urandom bs=4 count=16 status=none | od -A none -t u4
+```
+Then serve the script by  
+```sh
+# socat -v -v tcp-listen:8080,fork,reuseaddr exec:/bin/rng.sh
+// Press Ctrl+Z
+# bg
+
+```
 
 # Bonus stuff  
 Good stuff:  
