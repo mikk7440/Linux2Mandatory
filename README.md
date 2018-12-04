@@ -1,9 +1,12 @@
 # Linux mandatory 2
 af Rasmus H. og Mikkel L
 
+A pie zero with desbian hosting a lighttpd server running from a lxc alpine container,  
+fetching random numbers from another lxc alpine container.
+
 # Table of content
-- [Install lxc-net](##Install%lxc-net)
-- [Create containers](##Create%containers)
+- [Install lxc-net](##Install)
+- [Create containers](##Create)
 
 <!-- toc -->
 
