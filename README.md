@@ -5,10 +5,10 @@ A pie zero with desbian hosting a lighttpd server running from a lxc alpine cont
 fetching random numbers from another lxc alpine container.
 
 # Table of content
-- [Install lxc-net](##Install-lxc-net)
-- [Create containers](##Create-containers)
-- [Server container](##Hosting-container)
-- [Random number container](##Random-number-container)
+- [Install lxc-net](##install-lxc-net)
+- [Create containers](##create-containers)
+- [Server container](##hosting-container)
+- [Random number container](##random-number-container)
 <!-- toc -->
 
 ## Install lxc-net
